@@ -3,18 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Content</title>
+    <title>Product Showcase</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .product-card {
+            width: 300px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 15px;
+        }
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .product-card h2 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .product-card p {
+            font-size: 14px;
+            color: #555;
+        }
+        .price {
+            font-size: 18px;
+            color: #e60000;
+            font-weight: bold;
+        }
+        .buy-btn {
+            display: inline-block;
+            padding: 8px 15px;
+            background: #e60000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .buy-btn:hover {
+            background: #cc0000;
+        }
     </style>
 </head>
 <body>
-    <h1>Random Fun Facts</h1>
-    <p>Did you know that honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still perfectly edible!</p>
-    
-    <h2>Another Cool Fact</h2>
-    <p>Bananas are berries, but strawberries are not! Botanically speaking, berries must have seeds inside the fruit.</p>
 
-    <a href="index.html">Back to Home</a>
+    <div class="product-card">
+        <img src="product-image.jpg" alt="Product Name">
+        <h2>Stylish Sneakers</h2>
+        <p>Comfortable and stylish sneakers perfect for everyday wear.</p>
+        <p class="price">$49.99</p>
+        <a href="#" class="buy-btn">Buy Now</a>
+    </div>
+
 </body>
 </html>
