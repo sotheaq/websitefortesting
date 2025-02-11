@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
+            background: linear-gradient(120deg, #f6d365, #fda085);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -15,38 +15,68 @@
             margin: 0;
         }
         .product-card {
-            width: 300px;
+            width: 320px;
             background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             text-align: center;
-            padding: 15px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
         }
-        .product-card img {
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        .product-image {
             width: 100%;
-            border-radius: 10px;
+            max-width: 250px;
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.3s ease-in-out;
+        }
+        .product-card:hover .product-image {
+            transform: scale(1.1);
         }
         .product-card h2 {
-            font-size: 20px;
+            font-size: 22px;
             margin: 10px 0;
+            color: #333;
+            position: relative;
+            z-index: 1;
         }
         .product-card p {
             font-size: 14px;
             color: #555;
+            position: relative;
+            z-index: 1;
         }
         .price {
-            font-size: 18px;
+            font-size: 20px;
             color: #e60000;
             font-weight: bold;
+            position: relative;
+            z-index: 1;
         }
         .buy-btn {
             display: inline-block;
-            padding: 8px 15px;
+            padding: 10px 20px;
             background: #e60000;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
             margin-top: 10px;
+            font-weight: bold;
+            transition: background 0.3s;
+            position: relative;
+            z-index: 1;
         }
         .buy-btn:hover {
             background: #cc0000;
@@ -56,7 +86,7 @@
 <body>
 
     <div class="product-card">
-        <img src="product-image.jpg" alt="Product Name">
+        <img src="product-image.png" alt="Product Name" class="product-image">
         <h2>Stylish Sneakers</h2>
         <p>Comfortable and stylish sneakers perfect for everyday wear.</p>
         <p class="price">$49.99</p>
