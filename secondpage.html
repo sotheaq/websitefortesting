@@ -6,8 +6,8 @@
     <title>Product Showcase</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -16,38 +16,40 @@
         }
         .product-card {
             width: 320px;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.6);
             border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            text-align: center;
+            backdrop-filter: blur(10px);
             padding: 20px;
-            position: relative;
-            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
         }
         .image-container {
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0));
             width: 250px;
             height: 250px;
-            margin: auto;
-            border-radius: 50%;
             display: flex;
-            align-items: center;
             justify-content: center;
-            position: relative;
-            box-shadow: 0px 0px 20px rgba(255, 215, 0, 0.5);
+            align-items: center;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 10px;
+            margin: auto;
+            backdrop-filter: blur(20px);
         }
         .product-image {
             width: 200px;
             transition: transform 0.3s ease-in-out;
-            filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.2));
         }
         .product-card:hover .product-image {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
         .product-card h2 {
             font-size: 22px;
-            margin: 10px 0;
             color: #333;
+            margin: 10px 0;
         }
         .product-card p {
             font-size: 14px;
@@ -55,22 +57,22 @@
         }
         .price {
             font-size: 20px;
-            color: #e60000;
+            color: #ff3b3b;
             font-weight: bold;
         }
         .buy-btn {
             display: inline-block;
             padding: 10px 20px;
-            background: #e60000;
+            background: #ff3b3b;
             color: #fff;
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
+            border-radius: 30px;
             font-weight: bold;
-            transition: background 0.3s;
+            transition: background 0.3s ease-in-out, transform 0.2s;
         }
         .buy-btn:hover {
-            background: #cc0000;
+            background: #e63232;
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -78,11 +80,11 @@
 
     <div class="product-card">
         <div class="image-container">
-            <img src="product-image.jpg" alt="Product Name" class="product-image">
+            <img src="product-image.png" alt="Product Name" class="product-image">
         </div>
-        <h2>Stylish Sneakers</h2>
-        <p>Comfortable and stylish sneakers perfect for everyday wear.</p>
-        <p class="price">$49.99</p>
+        <h2>Minimal Sneakers</h2>
+        <p>Modern and stylish sneakers with a sleek design.</p>
+        <p class="price">$79.99</p>
         <a href="#" class="buy-btn">Buy Now</a>
     </div>
 
