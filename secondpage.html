@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(120deg, #f6d365, #fda085);
+            background: linear-gradient(120deg, #ff9a9e, #fad0c4);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -24,23 +24,22 @@
             position: relative;
             overflow: hidden;
         }
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: -50px;
-            width: 150px;
-            height: 150px;
-            background: rgba(255, 255, 255, 0.3);
+        .image-container {
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0));
+            width: 250px;
+            height: 250px;
+            margin: auto;
             border-radius: 50%;
-            z-index: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0px 0px 20px rgba(255, 215, 0, 0.5);
         }
         .product-image {
-            width: 100%;
-            max-width: 250px;
-            display: block;
-            margin: 0 auto;
+            width: 200px;
             transition: transform 0.3s ease-in-out;
+            filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.2));
         }
         .product-card:hover .product-image {
             transform: scale(1.1);
@@ -49,21 +48,15 @@
             font-size: 22px;
             margin: 10px 0;
             color: #333;
-            position: relative;
-            z-index: 1;
         }
         .product-card p {
             font-size: 14px;
             color: #555;
-            position: relative;
-            z-index: 1;
         }
         .price {
             font-size: 20px;
             color: #e60000;
             font-weight: bold;
-            position: relative;
-            z-index: 1;
         }
         .buy-btn {
             display: inline-block;
@@ -75,8 +68,6 @@
             margin-top: 10px;
             font-weight: bold;
             transition: background 0.3s;
-            position: relative;
-            z-index: 1;
         }
         .buy-btn:hover {
             background: #cc0000;
@@ -86,7 +77,9 @@
 <body>
 
     <div class="product-card">
-        <img src="product-image.jpg" alt="Product Name" class="product-image">
+        <div class="image-container">
+            <img src="product-image.jpg" alt="Product Name" class="product-image">
+        </div>
         <h2>Stylish Sneakers</h2>
         <p>Comfortable and stylish sneakers perfect for everyday wear.</p>
         <p class="price">$49.99</p>
