@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Floating Card</title>
+    <title>Horizontal Scroll Cards</title>
     <style>
       * {
         box-sizing: border-box;
@@ -12,36 +12,42 @@
       body {
         background: #0f0f0f;
         font-family: "Segoe UI", sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
         margin: 0;
         padding: 20px;
+        color: white;
+      }
+
+      .scroll-row {
+        display: flex;
+        overflow-x: auto;
+        gap: 16px;
+        padding-bottom: 20px;
+        scroll-snap-type: x mandatory;
+      }
+
+      .scroll-row::-webkit-scrollbar {
+        display: none; /* Hide scrollbar */
       }
 
       .glow-card {
-        width: 100%;
-        max-width: 320px;
+        flex: 0 0 auto;
+        width: 260px;
         background: #1c1c1c;
         border-radius: 16px;
         overflow: hidden;
-        position: relative;
         transition: 0.4s ease;
         box-shadow: 0 0 0 transparent;
-        cursor: pointer;
-        margin: 30px 30px;
+        scroll-snap-align: start;
       }
 
       .glow-card:hover {
-        transform: translateY(-10px);
+        transform: translateY(-8px);
         box-shadow: 0 0 20px #00c8ff88;
       }
 
       .glow-card img {
         width: 100%;
-        height: auto;
-        max-height: 200px;
+        height: 180px;
         object-fit: cover;
         transition: 0.3s ease;
       }
@@ -52,12 +58,11 @@
 
       .glow-info {
         padding: 1rem;
-        color: white;
       }
 
       .glow-info h3 {
         margin: 0;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         color: #00c8ff;
       }
 
@@ -86,88 +91,66 @@
         font-weight: bold;
         cursor: pointer;
         transition: 0.3s ease;
-        text-align: center;
       }
 
       .glow-info .btn:hover {
         background: #00b2e0;
       }
-
-      @media screen and (max-width: 480px) {
-        .glow-card {
-          width: 100%;
-        }
-
-        .glow-info h3 {
-          font-size: 1rem;
-        }
-
-        .glow-info p {
-          font-size: 0.8rem;
-        }
-
-        .glow-info .btn {
-          width: 100%;
-          padding: 10px;
-        }
-      }
     </style>
   </head>
   <body>
-    <div class="glow-card">
-      <img
-        src="https://americas.lexar.com/wp-content/uploads/2023/12/633x_microSDHC_SDXC_512GB_Photo1-1.png"
-        alt="Memory Card"
-      />
-      <div class="glow-info">
-        <h3>UltraSpeed Memory</h3>
-        <p>
-          Boost your workflow with this ultra-fast memory card — designed for
-          creators who demand speed.
-        </p>
-        <button class="btn">Explore</button>
+    <h2>🔥 Featured Products</h2>
+    <div class="scroll-row">
+      <!-- Card 1 -->
+      <div class="glow-card">
+        <img
+          src="https://americas.lexar.com/wp-content/uploads/2023/12/633x_microSDHC_SDXC_512GB_Photo1-1.png"
+          alt="Memory Card"
+        />
+        <div class="glow-info">
+          <h3>UltraSpeed Memory</h3>
+          <p>Boost your workflow with this ultra-fast memory card.</p>
+          <button class="btn">Explore</button>
+        </div>
       </div>
-    </div>
-    <div class="glow-card">
-      <img
-        src="https://americas.lexar.com/wp-content/uploads/2023/12/633x_microSDHC_SDXC_512GB_Photo1-1.png"
-        alt="Memory Card"
-      />
-      <div class="glow-info">
-        <h3>UltraSpeed Memory</h3>
-        <p>
-          Boost your workflow with this ultra-fast memory card — designed for
-          creators who demand speed.
-        </p>
-        <button class="btn">Explore</button>
+
+      <!-- Card 2 -->
+      <div class="glow-card">
+        <img
+          src="https://americas.lexar.com/wp-content/uploads/2023/12/633x_microSDHC_SDXC_512GB_Photo1-1.png"
+          alt="Laptop"
+        />
+        <div class="glow-info">
+          <h3>Smart Laptop</h3>
+          <p>Lightweight, powerful, and perfect for remote work.</p>
+          <button class="btn">Explore</button>
+        </div>
       </div>
-    </div>
-    <div class="glow-card">
-      <img
-        src="https://americas.lexar.com/wp-content/uploads/2023/12/633x_microSDHC_SDXC_512GB_Photo1-1.png"
-        alt="Memory Card"
-      />
-      <div class="glow-info">
-        <h3>UltraSpeed Memory</h3>
-        <p>
-          Boost your workflow with this ultra-fast memory card — designed for
-          creators who demand speed.
-        </p>
-        <button class="btn">Explore</button>
+
+      <!-- Card 3 -->
+      <div class="glow-card">
+        <img
+          src="https://americas.lexar.com/wp-content/uploads/2023/12/633x_microSDHC_SDXC_512GB_Photo1-1.png"
+          alt="Desktop"
+        />
+        <div class="glow-info">
+          <h3>Studio PC</h3>
+          <p>Built for creative professionals and high-end editing.</p>
+          <button class="btn">Explore</button>
+        </div>
       </div>
-    </div>
-    <div class="glow-card">
-      <img
-        src="https://americas.lexar.com/wp-content/uploads/2023/12/633x_microSDHC_SDXC_512GB_Photo1-1.png"
-        alt="Memory Card"
-      />
-      <div class="glow-info">
-        <h3>UltraSpeed Memory</h3>
-        <p>
-          Boost your workflow with this ultra-fast memory card — designed for
-          creators who demand speed.
-        </p>
-        <button class="btn">Explore</button>
+
+      <!-- Card 4 -->
+      <div class="glow-card">
+        <img
+          src="https://americas.lexar.com/wp-content/uploads/2023/12/633x_microSDHC_SDXC_512GB_Photo1-1.png"
+          alt="Phone"
+        />
+        <div class="glow-info">
+          <h3>Smartphone Pro</h3>
+          <p>All-day battery life and a stunning display.</p>
+          <button class="btn">Explore</button>
+        </div>
       </div>
     </div>
   </body>
