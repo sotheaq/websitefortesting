@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -10,199 +16,220 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+
     <title>Document</title>
     <style>
-      body {
-        padding: 0;
+      :root {
+        /*Color Section*/
+        --orange0-color: #ff7a21;
+        --orange1-color: #ff6600;
+        --orange2-color: #cc5100;
+        --orange3-color: #993d00;
+
+        --white1-color: #ffffff;
+        --white1-color: #cccccc;
+        --white1-color: #999999;
+        /* Margin */
+        --mg-top1-margin: 1rem 0 0 0;
+        --mg-top2-margin: 2rem 0 0 0;
+        --mg-top3-margin: 3rem 0 0 0;
+        --mg-top4-margin: 4rem 0 0 0;
+        --mg-top5-margin: 5rem 0 0 0;
+        --mg-bott1-margin: 0 1rem 0 0;
+        --mg-bott2-margin: 0 2rem 0 0;
+        --mg-bott3-margin: 0 3rem 0 0;
+        --mg-bott4-margin: 0 4rem 0 0;
+        --mg-bott5-margin: 0 5rem 0 0;
+        /* Font Size */
+        --txt1-font-size: 1.4rem;
+        --txt2-font-size: 2.2rem;
+        --txt3-font-size: 3rem;
+      }
+      * {
         margin: 0;
+        padding: 0;
         box-sizing: border-box;
-        font-family: "Montserrat", sans-serif;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        height: 200vh;
+        color: rgb(0, 0, 0);
       }
       .navbar {
-        font-family: sans-serif;
-        color: black;
         display: flex;
-        justify-content: space-around;
+        flex-direction: column;
         align-items: center;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        position: sticky;
-        top: 0;
+        border-bottom: 1px solid rgb(179, 179, 179);
+        padding: 0 1.5rem;
+        position: fixed;
         width: 100%;
-        z-index: 1000;
-        background-color: white;
-      }
-      .nav-links li a::after {
-        content: "";
-        position: absolute;
-        left: 50%; /* Start from the middle */
-        bottom: 0;
-        width: 0; /* Initially hidden */
-        height: 2px;
-        background: #ff6600;
-        transform: translateX(-50%); /* Center it properly */
-        transition: width 0.45s ease;
-      }
-
-      .nav-links {
-        display: flex;
-        list-style: none;
-      }
-      .nav-links li a {
-        position: relative;
-        padding: 8px 0;
-        font-size: 1.2rem;
-        transition: color 0.45s ease;
-        font-weight: 550;
-      }
-      .nav-links li a:hover {
-        color: #ff6600;
-      }
-      .nav-links li a:hover::after {
-        width: 100%; /* Expands to full width */
-        left: 50%; /* Keeps it centered */
-      }
-      .nav-links li {
-        padding: 5px 15px;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%);
+        backdrop-filter: blur(20px);
+        z-index: 1;
       }
       .logo {
-        width: 100px;
+        width: 125px;
+        margin: 1rem;
       }
-      img {
+      .logo > img {
         width: 100%;
       }
-      .btn-container .btn {
-        border: none;
-        outline: none;
-        background: transparent;
-        font-size: 1.2rem;
-        transition: all 0.45s ease;
-        color: black;
-        padding: 10px;
-      }
-      .btn-container {
-        display: flex;
-        flex-direction: row;
-      }
-      .btn-container .btn:hover {
-        color: #ff6600;
-      }
-      .btn-container .btn-mode {
-        font-size: 1.5rem;
-      }
-      .containerh1 {
-        text-align: center;
-        z-index: 1;
-        position: relative;
-      }
-      /*welcome section*/
-      .welcome-section {
-        padding-top: 20px;
-        position: relative; /* Essential for positioning children */
+      .nav-lists {
+        list-style: none;
         width: 100%;
-        height: 100vh; /* Full viewport height */
-        overflow: hidden; /* Prevents scrollbars if image is large */
+        padding: 0 2rem;
+        display: none;
+      }
+      .nav-link {
+        transition: all 0.6s ease;
+        padding: 0.6rem;
+      }
+      .nav-link:hover {
+        background-color: var(--orange0-color);
+      }
+      .nav-link a:hover {
+        color: white;
       }
 
-      .welcome-bg-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 90vh;
+      .nav-link > a {
+        padding: 0 1rem;
+        text-decoration: none;
+        color: black;
+        font-size: var(--txt1-font-size);
+        font-weight: bold;
+        transition: all 0.6s ease;
+      }
+      .nav-link i {
+        padding-right: 1rem;
+      }
+      .top-space {
+        padding-top: 5rem;
+      }
+      .mainsection-image {
         background-image: linear-gradient(
-            rgba(0, 0, 0, 0.85),
-            rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.85)
+            to bottom,
+            rgba(0, 0, 0, 0.8) 15%,
+            rgba(255, 255, 255, 0.4),
+            rgba(0, 0, 0, 0.8) 85%
           ),
-          url("welsection.jpg"); /* Add your image path */
-        background-size: cover; /* Ensures image covers entire div */
-        background-position: center; /* Centers the image */
-        background-repeat: no-repeat; /* Prevents repeating */
-        z-index: 1; /* Places it below content */
+          url(section1.jpg);
+        height: 500px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
       }
-      .welcome-con {
-        padding: 50px;
-        width: 50%;
-        height: 85vh;
-        position: relative;
-        z-index: 2;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-      }
-      .welcome-info {
-        color: white;
+      .mainsection-image {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 20px;
-      }
-      .welcome-info > h2 {
-        font-size: 2.5rem;
-      }
-      .welcome-info > p {
-        line-height: 25px;
-        font-size: 1rem;
-      }
-      .btn-con {
-        margin: 20px;
-      }
-      .explore-more {
-        font-size: 1.5rem;
-        padding: 15px 40px;
-        border-radius: 35px;
-        border: 2px solid orange;
         color: white;
-        background-color: orange;
-        margin: 0 40px;
+        text-align: center;
+      }
+
+      .big-text {
+        font-family: "Poppins", sans-serif;
+        font-size: clamp(4rem, 15vw, 8rem);
+        font-weight: 900;
+        line-height: 0.85;
+        display: block; /* Ensures span behaves like block element */
+        background: linear-gradient(45deg, #ff5b25, #fca081);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-transform: uppercase;
+        letter-spacing: -3px;
+        margin-top: 1rem;
+      }
+      .small-text {
+        padding-top: 1rem;
+        font-size: 1rem;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        opacity: 0.9;
+        margin-bottom: 1rem;
+        color: rgb(0, 0, 0);
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .big-text:hover {
+        animation: float 3s ease-in-out infinite;
+      }
+      .btndown {
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        transition: all 0.3s ease;
+      }
+      .btndown:hover {
+        color: rgb(140, 140, 140);
+        transform: scale(1.5);
+      }
+
+      @media screen and (min-width: 768px) {
+        .navbar {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .nav-lists {
+          display: flex;
+          flex-direction: row;
+          width: auto;
+        }
+        .nav-link i {
+          display: none;
+        }
       }
     </style>
   </head>
   <body>
     <nav class="navbar">
-      <div class="logo">
-        <img src="logo.png" alt="" />
-      </div>
-      <ul class="nav-links">
-        <li><a>HOME</a></li>
-        <li><a>PRODUCT</a></li>
-        <li><a>ABOUT US</a></li>
+      <div class="logo"><img src="logo.png" alt="logo" /></div>
+      <ul class="nav-lists">
+        <li class="nav-link">
+          <a href="#"><i class="fa-solid fa-house-user"></i>HOME</a>
+        </li>
+        <li class="nav-link">
+          <a href=""><i class="fa-solid fa-shop"></i>PRODUCT</a>
+        </li>
+        <li class="nav-link">
+          <a href=""><i class="fa-solid fa-address-card"></i>CONTACT US</a>
+        </li>
       </ul>
-      <div class="btn-container">
-        <button class="btn">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-        <button class="btn btn-mode">
-          <i class="fa-solid fa-toggle-off"></i>
-        </button>
-      </div>
     </nav>
-    <section class="welcome-section">
-      <div class="welcome-bg-image"></div>
-      <div class="welcome-con">
-        <div class="welcome-info">
-          <h2>WELCOME TO ARES STORE</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam
-            aliquid cumque non et fugiat saepe autem, ipsam, recusandae
-            architecto dolores delectus impedit alias sint necessitatibus id
-            tenetur facere optio quo magnam vel! Tempora unde hic sapiente sed,
-            quam in odio doloribus numquam temporibus odit officia maxime
-            expedita cumque quidem doloremque?
-          </p>
-          <div class="btn-con">
-            <button class="explore-more">Explore More</button>
-          </div>
-        </div>
+    <section class="top-space">
+      <div class="mainsection-image">
+        <h2>
+          Welcome to<br />
+          <span class="big-text">ARES GEAR</span>
+        </h2>
+        <p class="small-text">
+          Looking for top-tier tech accessories? We provide premium products
+          with excellent quality, competitive prices.
+        </p>
+        <a href="#section2" class="btndown"
+          ><i class="fa-solid fa-angle-down"></i
+        ></a>
       </div>
     </section>
+    <div>
+      <p id="section2">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse,
+        cupiditate.
+      </p>
+    </div>
   </body>
 </html>
