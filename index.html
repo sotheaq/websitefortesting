@@ -3,12 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <!-- fontawsome cdn link -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -16,220 +11,87 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
+    <!-- poppins font-family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
     <style>
-      :root {
-        /*Color Section*/
-        --orange0-color: #ff7a21;
-        --orange1-color: #ff6600;
-        --orange2-color: #cc5100;
-        --orange3-color: #993d00;
-
-        --white1-color: #ffffff;
-        --white1-color: #cccccc;
-        --white1-color: #999999;
-        /* Margin */
-        --mg-top1-margin: 1rem 0 0 0;
-        --mg-top2-margin: 2rem 0 0 0;
-        --mg-top3-margin: 3rem 0 0 0;
-        --mg-top4-margin: 4rem 0 0 0;
-        --mg-top5-margin: 5rem 0 0 0;
-        --mg-bott1-margin: 0 1rem 0 0;
-        --mg-bott2-margin: 0 2rem 0 0;
-        --mg-bott3-margin: 0 3rem 0 0;
-        --mg-bott4-margin: 0 4rem 0 0;
-        --mg-bott5-margin: 0 5rem 0 0;
-        /* Font Size */
-        --txt1-font-size: 1.4rem;
-        --txt2-font-size: 2.2rem;
-        --txt3-font-size: 3rem;
-      }
       * {
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
+        box-sizing: border;
       }
       body {
-        height: 200vh;
-        color: rgb(0, 0, 0);
+        font-family: "Poppins", sans-serif;
       }
       .navbar {
         display: flex;
-        flex-direction: column;
         align-items: center;
-        border-bottom: 1px solid rgb(179, 179, 179);
-        padding: 0 1.5rem;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%);
-        backdrop-filter: blur(20px);
-        z-index: 1;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+        flex-wrap: wrap;
+        border-bottom: 1px solid grey;
       }
       .logo {
-        width: 125px;
-        margin: 1rem;
+        width: 150px;
       }
       .logo > img {
         width: 100%;
       }
-      .nav-lists {
-        list-style: none;
-        width: 100%;
-        padding: 0 2rem;
+      .toggle > i {
+        font-size: 2rem;
+        color: #ff6600;
+      }
+      .nav-list {
         display: none;
+        width: 100%;
+        list-style: none;
+        margin-top: 1.5rem;
+        padding: 1rem;
+        border: 1.5px solid black;
+        border-radius: 10px;
+        background-color: #ffffff;
       }
       .nav-link {
-        transition: all 0.6s ease;
-        padding: 0.6rem;
+        padding: 0.7rem;
+        transition: all 0.4s ease-in-out;
       }
-      .nav-link:hover {
-        background-color: var(--orange0-color);
-      }
-      .nav-link a:hover {
-        color: white;
-      }
-
       .nav-link > a {
-        padding: 0 1rem;
         text-decoration: none;
         color: black;
-        font-size: var(--txt1-font-size);
-        font-weight: bold;
-        transition: all 0.6s ease;
+        font-size: 1.5rem;
+        font-weight: 700;
       }
-      .nav-link i {
+      .nav-link > a > i {
         padding-right: 1rem;
       }
-      .top-space {
-        padding-top: 5rem;
-      }
-      .mainsection-image {
-        background-image: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.8) 15%,
-            rgba(255, 255, 255, 0.4),
-            rgba(0, 0, 0, 0.8) 85%
-          ),
-          url(section1.jpg);
-        height: 500px;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-      }
-      .mainsection-image {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        text-align: center;
-      }
-
-      .big-text {
-        font-family: "Poppins", sans-serif;
-        font-size: clamp(4rem, 15vw, 8rem);
-        font-weight: 900;
-        line-height: 0.85;
-        display: block; /* Ensures span behaves like block element */
-        background: linear-gradient(45deg, #ff5b25, #fca081);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        text-transform: uppercase;
-        letter-spacing: -3px;
-        margin-top: 1rem;
-      }
-      .small-text {
-        padding-top: 1rem;
-        font-size: 1rem;
-        letter-spacing: 5px;
-        text-transform: uppercase;
-        opacity: 0.9;
-        margin-bottom: 1rem;
-        color: rgb(0, 0, 0);
-      }
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-      }
-
-      .big-text:hover {
-        animation: float 3s ease-in-out infinite;
-      }
-      .btndown {
-        background: transparent;
-        border: none;
-        color: white;
-        font-size: 2rem;
-        transition: all 0.3s ease;
-      }
-      .btndown:hover {
-        color: rgb(140, 140, 140);
-        transform: scale(1.5);
-      }
-
-      @media screen and (min-width: 768px) {
-        .navbar {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-        }
-        .nav-lists {
-          display: flex;
-          flex-direction: row;
-          width: auto;
-        }
-        .nav-link i {
-          display: none;
-        }
+      .nav-link:hover {
+        background-color: #ff6600;
+        border-radius: 12px;
       }
     </style>
   </head>
   <body>
     <nav class="navbar">
-      <div class="logo"><img src="logo.png" alt="logo" /></div>
-      <ul class="nav-lists">
+      <div class="logo">
+        <img src="logo.png" alt="logo" />
+      </div>
+      <div class="toggle"><i class="fa-solid fa-bars"></i></div>
+      <ul class="nav-list">
         <li class="nav-link">
           <a href="#"><i class="fa-solid fa-house-user"></i>HOME</a>
         </li>
         <li class="nav-link">
-          <a href=""><i class="fa-solid fa-shop"></i>PRODUCT</a>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i>PRODUCT</a>
         </li>
         <li class="nav-link">
-          <a href=""><i class="fa-solid fa-address-card"></i>CONTACT US</a>
+          <a href="#"><i class="fa-solid fa-address-card"></i>ABOUT US</a>
         </li>
       </ul>
     </nav>
-    <section class="top-space">
-      <div class="mainsection-image">
-        <h2>
-          Welcome to<br />
-          <span class="big-text">ARES GEAR</span>
-        </h2>
-        <p class="small-text">
-          Looking for top-tier tech accessories? We provide premium products
-          with excellent quality, competitive prices.
-        </p>
-        <a href="#section2" class="btndown"
-          ><i class="fa-solid fa-angle-down"></i
-        ></a>
-      </div>
-    </section>
-    <div>
-      <p id="section2">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse,
-        cupiditate.
-      </p>
-    </div>
   </body>
 </html>
