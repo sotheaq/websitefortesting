@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <title>Document</title>
+    <title>ARES STORE</title>
     <style>
       * {
         margin: 0;
@@ -76,6 +76,7 @@
       .header {
         background-color: antiquewhite;
         padding: 10px;
+        text-align: center;
       }
       .header > h2 > i {
         padding: 1rem;
@@ -95,14 +96,111 @@
         align-items: center;
         margin: 1rem 2rem;
         border-radius: 10px;
+        transition: all 0.5s ease-in-out;
+      }
+      .card:hover {
+        transform: scale(1.05);
+        border: 1px solid #ff6600;
       }
       .card > img {
         width: 300px;
         border-bottom: 1px solid black;
+        padding-bottom: 10px;
+        transition: all 0.5s ease-in-out;
+      }
+
+      .card > img:hover {
+        border-bottom: 1px solid #ff6600;
       }
       .card > h2 {
         font-size: 1.2rem;
         padding: 1rem;
+      }
+      .footer {
+        margin: 1rem;
+      }
+      .footer-left {
+        margin: 1.5rem 0;
+      }
+      .footer-right {
+        font-size: 0.9rem;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .footer-menu {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .open-hour {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+          "header header"
+          "day hour";
+        gap: 5px;
+        font-size: 14px;
+      }
+      .open-hourtxt {
+        grid-area: header;
+      }
+      .day {
+        grid-area: day;
+      }
+      .hour {
+        list-style: none;
+        grid-area: hour;
+        font-weight: 550;
+      }
+      .footer-menu > a {
+        margin: 2px 0;
+        text-decoration: none;
+        color: black;
+        font-weight: 550;
+        transition: all 0.3s ease-in-out;
+        font-size: 14px;
+      }
+      .footer-menu > a:hover {
+        color: #ff6600;
+      }
+      .footer-bottom {
+        display: flex;
+        flex-direction: column;
+      }
+      .media-icon {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 0.5rem 4rem 0;
+        margin: 0.5rem;
+      }
+
+      .media-icon > a {
+        font-size: 2.2rem;
+        color: black;
+        transition: all 0.3s ease-in-out;
+      }
+      .media-icon > a:hover {
+        color: #ff6600;
+      }
+
+      .legal-links {
+        display: flex;
+        justify-content: space-around;
+        padding: 0.5rem;
+      }
+      .legal-links > a:hover {
+        color: #ff6600;
+      }
+      .legal-links > a {
+        text-decoration: none;
+        color: black;
+      }
+      .footer-bottom > p {
+        border-top: 1px solid grey;
+        padding: 1rem;
+        text-align: center;
       }
     </style>
   </head>
@@ -148,6 +246,56 @@
           alt="micro-sdcard"
         />
         <h2>Lexar® PLAY PRO microSDXC™ Express Card</h2>
+      </div>
+      <div class="card">
+        <img
+          src="https://www-oss.lexar.com/uploads/product_images/RW470_slider_none_1.png"
+          alt="micro-sdcard"
+        />
+        <h2>Lexar® Professional USB-C™ Dual-Slot Reader</h2>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-left">
+        <h3>ARES STORE</h3>
+        <p>Upgrade Your Tech Experience.</p>
+      </div>
+      <div class="footer-right">
+        <div class="section-menufooter">
+          <h3>Our Store</h3>
+          <div class="footer-menu">
+            <a href="javascript:void(0)">HOME</a>
+            <a href="javascript:void(0)">PRODUCT</a>
+            <a href="javascript:void(0)">ABOUT US</a>
+          </div>
+        </div>
+        <div class="open-hour">
+          <h3 class="open-hourtxt">Business Hours</h3>
+          <ul class="day">
+            <li>Weekdays:</li>
+            <li>Weekend:</li>
+            <li>Holiday:</li>
+          </ul>
+          <ul class="hour">
+            <li>8:00AM - 9:00PM</li>
+            <li>9:00AM - 9:00PM</li>
+            <li>9:00PM - 9:00PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="media-icon">
+          <a href="javascript:void(0)"><i class="fa-brands fa-facebook"></i></a>
+          <a href="javascript:void(0)"><i class="fa-brands fa-telegram"></i></a>
+          <a href="javascript:void(0)"
+            ><i class="fa-brands fa-square-instagram"></i
+          ></a>
+        </div>
+        <div class="legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+        <p>© 2025 Company Name. All rights reserved.</p>
       </div>
     </div>
   </body>
