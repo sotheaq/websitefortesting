@@ -73,6 +73,37 @@
         background-color: #ff6600;
         border-radius: 12px;
       }
+      .header {
+        background-color: antiquewhite;
+        padding: 10px;
+      }
+      .header > h2 > i {
+        padding: 1rem;
+      }
+      .featur-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, auto);
+        min-height: 100vh;
+      }
+      .card {
+        background-color: rgb(255, 255, 255);
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem 2rem;
+        border-radius: 10px;
+      }
+      .card > img {
+        width: 300px;
+        border-bottom: 1px solid black;
+      }
+      .card > h2 {
+        font-size: 1.2rem;
+        padding: 1rem;
+      }
     </style>
   </head>
   <body>
@@ -93,5 +124,31 @@
         </li>
       </ul>
     </nav>
+    <div class="header">
+      <h2><i class="fa-solid fa-box"></i>Feature Product</h2>
+    </div>
+    <div class="featur-section">
+      <div class="card">
+        <img
+          src="https://www.pgytech.com/cdn/shop/files/1000-2_db22ac36-271f-4b3f-98e6-9ce19ad3d022_1080x.jpg?v=1709192881"
+          alt="createmate"
+        />
+        <h2>CreateMate High-speed Card Reader Case</h2>
+      </div>
+      <div class="card">
+        <img
+          src="https://www-oss.lexar.com/lexar/images/2025-01-22/ARMOR%20GOLD%201TB-ID1%401x.webp?x-oss-process=image/format,webp"
+          alt="sd-card"
+        />
+        <h2>Lexar® ARMOR GOLD SDXC™ UHS-II Card</h2>
+      </div>
+      <div class="card">
+        <img
+          src="https://www-oss.lexar.com/lexar/images/2025-01-02/PLAY%20PRO%20Card%201TB1.webp?x-oss-process=image/format,webp"
+          alt="micro-sdcard"
+        />
+        <h2>Lexar® PLAY PRO microSDXC™ Express Card</h2>
+      </div>
+    </div>
   </body>
 </html>
