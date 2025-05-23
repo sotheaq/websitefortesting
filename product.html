@@ -31,7 +31,6 @@
         flex-direction: column;
         min-height: 100vh;
       }
-
       .navbar {
         display: flex;
         align-items: center;
@@ -73,13 +72,14 @@
         padding: 0.7rem;
         transition: all 0.4s ease-in-out;
       }
-      .nav-link > a {
+      .nav-link a {
         text-decoration: none;
         color: black;
         font-size: 1.5rem;
         font-weight: 700;
+        display: block; /* Make the anchor fill the li */
       }
-      .nav-link > a > i {
+      .nav-link a i {
         padding-right: 1rem;
       }
       .nav-link:hover {
