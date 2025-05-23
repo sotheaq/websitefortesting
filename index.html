@@ -45,16 +45,25 @@
       .toggle > i {
         font-size: 2rem;
         color: #ff6600;
+        cursor: pointer;
+        transition: transform 0.3s ease;
       }
       .nav-list {
-        display: none;
+        max-height: 0;
         width: 100%;
         list-style: none;
-        margin-top: 1.5rem;
-        padding: 1rem;
-        border: 1.5px solid black;
+        overflow: hidden;
+        padding: 0 1rem;
+        border: 1.5px solid transparent;
         border-radius: 10px;
         background-color: #ffffff;
+        transition: all 0.5s ease-in-out;
+      }
+      .nav-list.active {
+        max-height: 500px;
+        padding: 1rem;
+        border-color: black;
+        margin-top: 2rem;
       }
       .nav-link {
         padding: 0.7rem;
@@ -73,6 +82,7 @@
         background-color: #ff6600;
         border-radius: 12px;
       }
+      /* Header  */
       .header {
         background-color: antiquewhite;
         padding: 10px;
@@ -212,16 +222,19 @@
       <div class="toggle"><i class="fa-solid fa-bars"></i></div>
       <ul class="nav-list">
         <li class="nav-link">
-          <a href="#"><i class="fa-solid fa-house-user"></i>HOME</a>
+          <a href="index.html"><i class="fa-solid fa-house-user"></i>HOME</a>
         </li>
         <li class="nav-link">
-          <a href="product.html"><i class="fa-solid fa-cart-shopping"></i>PRODUCT</a>
+          <a href="product.html"
+            ><i class="fa-solid fa-cart-shopping"></i>PRODUCT</a
+          >
         </li>
         <li class="nav-link">
           <a href="#"><i class="fa-solid fa-address-card"></i>ABOUT US</a>
         </li>
       </ul>
     </nav>
+
     <div class="header">
       <h2><i class="fa-solid fa-box"></i>Feature Product</h2>
     </div>
@@ -265,7 +278,7 @@
           <h3>Our Store</h3>
           <div class="footer-menu">
             <a href="javascript:void(0)">HOME</a>
-            <a href="javascript:void(0)">PRODUCT</a>
+            <a href="product.html">PRODUCT</a>
             <a href="javascript:void(0)">ABOUT US</a>
           </div>
         </div>
@@ -298,5 +311,26 @@
         <p>© 2025 Company Name. All rights reserved.</p>
       </div>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleButton = document.querySelector(".toggle i");
+        const navList = document.querySelector(".nav-list");
+
+        toggleButton.addEventListener("click", function () {
+          navList.classList.toggle("active");
+
+          // Change icon between bars and X
+          if (navList.classList.contains("active")) {
+            toggleButton.classList.remove("fa-bars");
+            toggleButton.classList.add("fa-times");
+            toggleButton.style.transform = "rotate(180deg)";
+          } else {
+            toggleButton.classList.remove("fa-times");
+            toggleButton.classList.add("fa-bars");
+            toggleButton.style.transform = "rotate(0deg)";
+          }
+        });
+      });
+    </script>
   </body>
 </html>
