@@ -79,17 +79,61 @@
       }
       .nav-link a {
         text-decoration: none;
-        color: black;
+        color: rgb(0, 0, 0);
         font-size: 1.5rem;
         font-weight: 700;
         display: block; /* Make the anchor fill the li */
       }
       .nav-link a i {
         padding-right: 1rem;
+        color: #ff6600;
       }
       .nav-link:hover {
         background-color: #ff6600;
         border-radius: 12px;
+        a > i {
+          color: white;
+        }
+      }
+      /* Hero section */
+      .hero-section {
+        height: 50vh;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.8)),
+          url("section1.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .hero-section h2 {
+        color: white;
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      .hero-section span {
+        font-size: 3rem;
+      }
+      .shop-now {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        color: white;
+        background-color: black;
+        outline: none;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        border: 1px solid white;
+        box-shadow: 0 0.7px 10px -3px rgb(255, 255, 255);
+        transition: all 0.3s ease-in-out;
+      }
+      .shop-now:hover {
+        transform: scale(1.1);
+        color: #ff6600;
+        border: 1px solid #ff6600;
+        background: white;
+        box-shadow: 0 0.7px 10px -3px #ff6600;
       }
       /* Header  */
       .header {
@@ -246,6 +290,13 @@
         </li>
       </ul>
     </nav>
+    <section class="hero-section">
+      <h2>
+        Welcome to<br />
+        <span>ARES GEAR</span>
+      </h2>
+      <button class="shop-now">Shop Now</button>
+    </section>
     <!-- feature product -->
     <div class="header">
       <h2><i class="fa-solid fa-box"></i>Feature Product</h2>
@@ -320,7 +371,7 @@
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Use</a>
         </div>
-        <p>© 2025 Company Name. All rights reserved.</p>
+        <p>© 2025 ARES GEAR. All rights reserved.</p>
       </div>
     </div>
     <!-- Toggle menu action -->
