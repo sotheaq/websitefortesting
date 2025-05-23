@@ -29,8 +29,9 @@
         font-family: "Poppins", sans-serif;
         display: flex;
         flex-direction: column;
-        min-height: 100vh;
+        padding-top: 80px;
       }
+
       .navbar {
         display: flex;
         align-items: center;
@@ -38,6 +39,13 @@
         padding: 1rem 2rem;
         flex-wrap: wrap;
         border-bottom: 1px solid grey;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: white;
+        z-index: 1000;
+        box-shadow: 0 0.7px 10px -3px black;
       }
       .logo {
         width: 150px;
@@ -141,12 +149,10 @@
         display: flex;
         justify-content: space-between;
       }
-
       .footer-menu {
         display: flex;
         flex-direction: column;
       }
-
       .open-hour {
         display: grid;
         grid-template-columns: auto 1fr;
@@ -218,6 +224,7 @@
       }
       /* CATEGORIES STYLE */
       .categories {
+        height: auto;
         text-align: center;
         max-width: 600px;
         margin: 0 auto;
@@ -244,7 +251,7 @@
       }
 
       .categories-body {
-        padding: 15px;
+        padding: 10px;
       }
 
       .categories-list {
@@ -272,7 +279,7 @@
 
       .header-categories i {
         transition: transform 0.3s ease;
-        color: #ff6600;
+        color: rgb(255, 102, 0);
       }
 
       .categories-content {
@@ -331,7 +338,9 @@
           >
         </li>
         <li class="nav-link">
-          <a href="#"><i class="fa-solid fa-address-card"></i>ABOUT US</a>
+          <a href="aboutus.html"
+            ><i class="fa-solid fa-address-card"></i>ABOUT US</a
+          >
         </li>
       </ul>
     </nav>
@@ -356,7 +365,8 @@
       <div class="categories-body">
         <ul class="categories-list">
           <li class="header-categories">
-            <span>Card Reader</span><i class="fa-solid fa-caret-down"></i>
+            <span>Meomory Card Reader & Case</span
+            ><i class="fa-solid fa-caret-down"></i>
           </li>
           <ul class="categories-content">
             <li>CreateMate High-speed Card Reader Case</li>
@@ -365,43 +375,58 @@
           </ul>
         </ul>
       </div>
-      <!-- <div class="categories-body">
+      <div class="categories-body">
         <ul class="categories-list">
           <li class="header-categories">
-            <span>Categories</span><i class="fa-solid fa-caret-down"></i>
+            <span>Mouse</span><i class="fa-solid fa-caret-down"></i>
           </li>
           <ul class="categories-content">
-            <li>Sub Categories</li>
-            <li>Sub Categories</li>
-            <li>Sub Categories</li>
+            <li>Basics Mouse</li>
+            <li>Gaming Mouse</li>
+            <li>Professional Mouse</li>
+            <li>Wireless Mouse</li>
           </ul>
         </ul>
-      </div> -->
+      </div>
+      <div class="categories-body">
+        <ul class="categories-list">
+          <li class="header-categories">
+            <span>Keyboard</span><i class="fa-solid fa-caret-down"></i>
+          </li>
+          <ul class="categories-content">
+            <li>Wireless Keyboard</li>
+            <li>Standard Keyboard</li>
+            <li>Gaming Keyboard</li>
+            <li>Mechanical Keyboard</li>
+            <li>Membrane Keyboard</li>
+          </ul>
+        </ul>
+      </div>
+      <div class="categories-body">
+        <ul class="categories-list">
+          <li class="header-categories">
+            <span>Digital Storage</span><i class="fa-solid fa-caret-down"></i>
+          </li>
+          <ul class="categories-content">
+            <li>Internal Storage</li>
+            <li>External Storage</li>
+            <li>Portable Storage</li>
+          </ul>
+        </ul>
+      </div>
+      <div class="categories-body">
+        <ul class="categories-list">
+          <li class="header-categories">
+            <span>Accessories</span><i class="fa-solid fa-caret-down"></i>
+          </li>
+          <ul class="categories-content">
+            <li>Charger</li>
+            <li>Mouse Pads</li>
+            <li>Desk Mat</li>
+          </ul>
+        </ul>
+      </div>
     </div>
-
-    <script>
-      document.querySelectorAll(".header-categories").forEach((header) => {
-        header.addEventListener("click", function () {
-          const list = this.closest(".categories-list");
-          const content = list.querySelector(".categories-content");
-
-          // Close all other dropdowns
-          document.querySelectorAll(".categories-list").forEach((otherList) => {
-            if (otherList !== list) {
-              otherList.classList.remove("active");
-              otherList.querySelector(".categories-content").style.maxHeight =
-                "0";
-            }
-          });
-
-          // Toggle current dropdown
-          list.classList.toggle("active");
-          content.style.maxHeight = list.classList.contains("active")
-            ? content.scrollHeight + "px"
-            : "0";
-        });
-      });
-    </script>
 
     <div class="footer">
       <div class="footer-left">
@@ -446,36 +471,48 @@
         <p>© 2025 Company Name. All rights reserved.</p>
       </div>
     </div>
+    <!-- Drop Down Menu Action -->
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const toggleButton = document.querySelector(".toggle i");
-        const navList = document.querySelector(".nav-list");
+      document.querySelectorAll(".header-categories").forEach((header) => {
+        header.addEventListener("click", function () {
+          const list = this.closest(".categories-list");
+          const content = list.querySelector(".categories-content");
 
-        // Toggle menu when button is clicked
-        toggleButton.addEventListener("click", function () {
-          navList.classList.toggle("active");
-
-          // Change icon between bars and X
-          if (navList.classList.contains("active")) {
-            toggleButton.classList.replace("fa-bars", "fa-times");
-            toggleButton.style.transform = "rotate(180deg)";
-          } else {
-            toggleButton.classList.replace("fa-times", "fa-bars");
-            toggleButton.style.transform = "rotate(0deg)";
-          }
-        });
-
-        // Make entire li clickable (redirects to link)
-        document.querySelectorAll(".nav-link").forEach((item) => {
-          item.addEventListener("click", function (e) {
-            // Don't redirect if clicking directly on the anchor (let default behavior handle it)
-            if (e.target.tagName !== "A") {
-              const link = this.querySelector("a");
-              if (link) {
-                window.location.href = link.href;
-              }
+          // Close all other dropdowns
+          document.querySelectorAll(".categories-list").forEach((otherList) => {
+            if (otherList !== list) {
+              otherList.classList.remove("active");
+              otherList.querySelector(".categories-content").style.maxHeight =
+                "0";
             }
           });
+
+          // Toggle current dropdown
+          list.classList.toggle("active");
+          content.style.maxHeight = list.classList.contains("active")
+            ? content.scrollHeight + "px"
+            : "0";
+        });
+      });
+    </script>
+    <!-- Toggle Action -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get elements
+        const toggleBtn = document.querySelector(".toggle i");
+        const navList = document.querySelector(".nav-list");
+
+        // Toggle menu on button click
+        toggleBtn.addEventListener("click", function () {
+          // Toggle menu visibility
+          navList.classList.toggle("active");
+
+          // Switch between hamburger and X icons
+          if (navList.classList.contains("active")) {
+            toggleBtn.classList.replace("fa-bars", "fa-xmark");
+          } else {
+            toggleBtn.classList.replace("fa-xmark", "fa-bars");
+          }
         });
       });
     </script>
