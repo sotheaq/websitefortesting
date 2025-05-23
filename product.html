@@ -315,6 +315,7 @@
     </style>
   </head>
   <body>
+    <!-- nav bar -->
     <nav class="navbar">
       <div class="logo">
         <img src="logo.png" alt="logo" />
@@ -450,19 +451,31 @@
         const toggleButton = document.querySelector(".toggle i");
         const navList = document.querySelector(".nav-list");
 
+        // Toggle menu when button is clicked
         toggleButton.addEventListener("click", function () {
           navList.classList.toggle("active");
 
           // Change icon between bars and X
           if (navList.classList.contains("active")) {
-            toggleButton.classList.remove("fa-bars");
-            toggleButton.classList.add("fa-times");
+            toggleButton.classList.replace("fa-bars", "fa-times");
             toggleButton.style.transform = "rotate(180deg)";
           } else {
-            toggleButton.classList.remove("fa-times");
-            toggleButton.classList.add("fa-bars");
+            toggleButton.classList.replace("fa-times", "fa-bars");
             toggleButton.style.transform = "rotate(0deg)";
           }
+        });
+
+        // Make entire li clickable (redirects to link)
+        document.querySelectorAll(".nav-link").forEach((item) => {
+          item.addEventListener("click", function (e) {
+            // Don't redirect if clicking directly on the anchor (let default behavior handle it)
+            if (e.target.tagName !== "A") {
+              const link = this.querySelector("a");
+              if (link) {
+                window.location.href = link.href;
+              }
+            }
+          });
         });
       });
     </script>
