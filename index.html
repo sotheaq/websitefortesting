@@ -29,6 +29,31 @@
         font-family: "Poppins", sans-serif;
         padding-top: 80px;
       }
+      /* loading transition */
+      #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #000000;
+        color: #ff6600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.5rem;
+        font-weight: bold;
+        z-index: 9999;
+        user-select: none;
+        opacity: 1;
+        transition: opacity 2.5s ease;
+      }
+      #typing-text {
+        white-space: nowrap;
+        border-right: 2px solid white;
+        overflow: hidden;
+      }
+      /* Navbar */
       .navbar {
         display: flex;
         align-items: center;
@@ -82,7 +107,7 @@
         color: rgb(0, 0, 0);
         font-size: 1.5rem;
         font-weight: 700;
-        display: block; /* Make the anchor fill the li */
+        display: block;
       }
       .nav-link a i {
         padding-right: 1rem;
@@ -290,6 +315,10 @@
     </style>
   </head>
   <body>
+    <!-- loading transition -->
+    <div id="loading-screen">
+      <div id="typing-text"></div>
+    </div>
     <!-- nav bar -->
     <nav class="navbar">
       <div class="logo">
@@ -402,6 +431,35 @@
         <p>© 2025 ARES GEAR. All rights reserved.</p>
       </div>
     </div>
+    <!-- loading transition -->
+    <script>
+      const text = "ARES GEAR";
+      const typingSpeed = 75;
+
+      let index = 0;
+      const typingElement = document.getElementById("typing-text");
+      const loadingScreen = document.getElementById("loading-screen");
+
+      function type() {
+        if (index < text.length) {
+          typingElement.textContent += text.charAt(index);
+          index++;
+          setTimeout(type, typingSpeed);
+        } else {
+          typingElement.style.borderRight = "none";
+          setTimeout(() => {
+            loadingScreen.style.opacity = "0";
+            loadingScreen.addEventListener("transitionend", () => {
+              loadingScreen.style.display = "none";
+              document.body.classList.remove("loading");
+            });
+          }, 200);
+        }
+      }
+      window.addEventListener("load", () => {
+        type();
+      });
+    </script>
     <!-- Toggle menu action -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
