@@ -27,6 +27,7 @@
       }
       body {
         font-family: "Poppins", sans-serif;
+        padding-top: 80px;
       }
       .navbar {
         display: flex;
@@ -85,10 +86,14 @@
       }
       .nav-link a i {
         padding-right: 1rem;
+        color: #ff6600;
       }
       .nav-link:hover {
         background-color: #ff6600;
         border-radius: 12px;
+        a > i {
+          color: white;
+        }
       }
       /* Header  */
       .header {
@@ -221,9 +226,26 @@
         text-align: center;
       }
       .section {
-        font-size: 4rem;
-        text-align: center;
-        margin: 5rem;
+        font-size: 1rem;
+        text-align: left;
+        margin: 2.5rem 1rem 1rem 1rem;
+        padding: 1rem;
+        border-bottom: 1px solid #8f8f8f;
+        line-height: 1.5;
+        color: #2f2f2f;
+      }
+      .section h2 {
+        color: black;
+        border-left: 5px solid #ff6600;
+        padding-left: 1rem;
+        margin-bottom: 1.2rem;
+      }
+      .whyusben {
+        padding-left: 1.2rem;
+      }
+      .contact-us-here {
+        color: #ff6600;
+        text-decoration: none;
       }
     </style>
   </head>
@@ -250,9 +272,48 @@
         </li>
       </ul>
     </nav>
-    <section class="section">
-      <h2>Why you want to know about us?</h2>
+    <section class="section section1">
+      <h2>Who We Are</h2>
+      <p>
+        We are a small business passionate about delivering quality and style.
+        Our team is dedicated to offering carefully selected products that fit
+        your lifestyle.
+      </p>
     </section>
+    <section class="section section2">
+      <h2>Our Story</h2>
+      <p>
+        We started in 2023 with a simple goal: to bring beautiful, useful
+        products to people who care about quality. What began as a small idea
+        turned into a growing business that values honesty, creativity, and
+        customer happiness.
+      </p>
+    </section>
+    <section class="section section3">
+      <h2>What We Do</h2>
+      <p>
+        We offer a range of products including electronics, tech accessories,
+        and home gadgets — all selected to ensure durability, performance, and
+        design.
+      </p>
+    </section>
+    <section class="section section4">
+      <h2>Why Choose Us?</h2>
+      <ul class="whyusben">
+        <li>High-quality products</li>
+        <li>Friendly and fast customer service</li>
+        <li>Fast and reliable shipping</li>
+        <li>Affordable prices</li>
+      </ul>
+      <br />
+      <p>
+        Have questions?
+        <a class="contact-us-here" href="https://t.me/ares_gears"
+          >Contact us here</a
+        >
+      </p>
+    </section>
+
     <div class="footer">
       <div class="footer-left">
         <h3>ARES STORE</h3>
@@ -293,7 +354,7 @@
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Use</a>
         </div>
-        <p>© 2025 Company Name. All rights reserved.</p>
+        <p>© 2025 ARES GEAR. All rights reserved.</p>
       </div>
     </div>
     <!-- Toggle menu action -->
