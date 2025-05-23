@@ -97,7 +97,7 @@
       }
       /* Hero section */
       .hero-section {
-        height: 50vh;
+        height: 55vh;
         background-image: linear-gradient(rgba(0, 0, 0, 0.8)),
           url("section1.jpg");
         background-position: center;
@@ -179,6 +179,22 @@
         font-size: 1.2rem;
         padding: 1rem;
       }
+      .btn-viewdetail {
+        font-size: 1rem;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        outline: none;
+        border: 1px solid #000000;
+        padding: 0.3rem 1rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        transition: all 0.4s ease-in-out;
+      }
+      .btn-viewdetail:hover {
+        border: 1px solid #ff6600;
+        transform: translate(0, -5px);
+        color: #ff6600;
+      }
       .footer {
         margin: 1rem;
       }
@@ -186,7 +202,8 @@
         margin: 1.5rem 0;
       }
       .footer-right {
-        font-size: 0.9rem;
+        font-size: 14px;
+        font-weight: bold;
         display: flex;
         justify-content: space-between;
       }
@@ -208,20 +225,23 @@
       }
       .open-hourtxt {
         grid-area: header;
+        margin-bottom: 2.5px;
       }
       .day {
         grid-area: day;
+        font-weight: normal;
       }
       .hour {
         list-style: none;
         grid-area: hour;
-        font-weight: 550;
+        font-size: 14px;
+        font-weight: bold;
       }
       .footer-menu > a {
         margin: 2px 0;
         text-decoration: none;
         color: black;
-        font-weight: 550;
+
         transition: all 0.3s ease-in-out;
         font-size: 14px;
       }
@@ -290,6 +310,7 @@
         </li>
       </ul>
     </nav>
+    <!-- Section Hero -->
     <section class="hero-section">
       <h2>
         Welcome to<br />
@@ -297,6 +318,7 @@
       </h2>
       <button class="shop-now">Shop Now</button>
     </section>
+
     <!-- feature product -->
     <div class="header">
       <h2><i class="fa-solid fa-box"></i>Feature Product</h2>
@@ -308,6 +330,7 @@
           alt="createmate"
         />
         <h2>CreateMate High-speed Card Reader Case</h2>
+        <a class="btn-viewdetail">View Details</a>
       </div>
       <div class="card">
         <img
@@ -315,6 +338,7 @@
           alt="sd-card"
         />
         <h2>Lexar® ARMOR GOLD SDXC™ UHS-II Card</h2>
+        <a class="btn-viewdetail">View Details</a>
       </div>
       <div class="card">
         <img
@@ -322,6 +346,7 @@
           alt="micro-sdcard"
         />
         <h2>Lexar® PLAY PRO microSDXC™ Express Card</h2>
+        <a class="btn-viewdetail">View Details</a>
       </div>
       <div class="card">
         <img
@@ -329,6 +354,7 @@
           alt="micro-sdcard"
         />
         <h2>Lexar® Professional USB-C™ Dual-Slot Reader</h2>
+        <a class="btn-viewdetail">View Details</a>
       </div>
     </div>
     <div class="footer">
@@ -340,9 +366,9 @@
         <div class="section-menufooter">
           <h3>Our Store</h3>
           <div class="footer-menu">
-            <a href="javascript:void(0)">HOME</a>
-            <a href="product.html">PRODUCT</a>
-            <a href="javascript:void(0)">ABOUT US</a>
+            <a href="javascript:void(0)">Home</a>
+            <a href="product.html">Product</a>
+            <a href="javascript:void(0)">About Us</a>
           </div>
         </div>
         <div class="open-hour">
