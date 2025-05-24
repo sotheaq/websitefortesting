@@ -18,311 +18,8 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="pstyle.css" />
     <title>ARES STORE</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        font-family: "Poppins", sans-serif;
-        display: flex;
-        flex-direction: column;
-        padding-top: 80px;
-      }
-
-      .navbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem 2rem;
-        flex-wrap: wrap;
-        border-bottom: 1px solid grey;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background-color: white;
-        z-index: 1000;
-        box-shadow: 0 0.7px 10px -3px black;
-      }
-      .logo {
-        width: 150px;
-      }
-      .logo > img {
-        width: 100%;
-      }
-      .toggle > i {
-        font-size: 2rem;
-        color: #ff6600;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-      }
-      .nav-list {
-        max-height: 0;
-        width: 100%;
-        list-style: none;
-        overflow: hidden;
-        padding: 0 1rem;
-        border: 1.5px solid transparent;
-        border-radius: 10px;
-        background-color: #ffffff;
-        transition: all 0.5s ease-in-out;
-      }
-      .nav-list.active {
-        max-height: 500px;
-        padding: 1rem;
-        border-color: black;
-        margin-top: 2rem;
-      }
-      .nav-link {
-        padding: 0.7rem;
-        transition: all 0.4s ease-in-out;
-      }
-      .nav-link a {
-        text-decoration: none;
-        color: black;
-        font-size: 1.5rem;
-        font-weight: 700;
-        display: block; /* Make the anchor fill the li */
-      }
-      .nav-link a i {
-        padding-right: 1rem;
-        color: #ff6600;
-      }
-      .nav-link:hover {
-        background-color: #ff6600;
-        border-radius: 12px;
-        a > i {
-          color: white;
-        }
-      }
-      .header {
-        background-color: antiquewhite;
-        padding: 10px;
-        text-align: center;
-      }
-      .header > h2 > i {
-        padding: 1rem;
-      }
-      .featur-section {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, auto);
-        min-height: 100vh;
-      }
-      .card {
-        background-color: rgb(255, 255, 255);
-        border: 1px solid black;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 1rem 2rem;
-        border-radius: 10px;
-        transition: all 0.5s ease-in-out;
-      }
-      .card:hover {
-        transform: scale(1.05);
-        border: 1px solid #ff6600;
-      }
-      .card > img {
-        width: 300px;
-        border-bottom: 1px solid black;
-        padding-bottom: 10px;
-        transition: all 0.5s ease-in-out;
-      }
-
-      .card > img:hover {
-        border-bottom: 1px solid #ff6600;
-      }
-      .card > h2 {
-        font-size: 1.2rem;
-        padding: 1rem;
-      }
-      .footer {
-        margin-top: auto;
-        margin: 1rem;
-      }
-      .footer-left {
-        margin: 1.5rem 0;
-      }
-      .footer-right {
-        font-size: 0.9rem;
-        display: flex;
-        justify-content: space-between;
-      }
-      .footer-menu {
-        display: flex;
-        flex-direction: column;
-      }
-      .open-hour {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-template-rows: auto auto;
-        grid-template-areas:
-          "header header"
-          "day hour";
-        gap: 5px;
-        font-size: 14px;
-      }
-      .open-hourtxt {
-        grid-area: header;
-      }
-      .day {
-        grid-area: day;
-      }
-      .hour {
-        list-style: none;
-        grid-area: hour;
-        font-weight: 550;
-      }
-      .footer-menu > a {
-        margin: 2px 0;
-        text-decoration: none;
-        color: black;
-        font-weight: 550;
-        transition: all 0.3s ease-in-out;
-        font-size: 14px;
-      }
-      .footer-menu > a:hover {
-        color: #ff6600;
-      }
-      .footer-bottom {
-        display: flex;
-        flex-direction: column;
-      }
-      .media-icon {
-        display: flex;
-        justify-content: space-evenly;
-        padding: 0.5rem 4rem 0;
-        margin: 0.5rem;
-      }
-
-      .media-icon > a {
-        font-size: 2.2rem;
-        color: black;
-        transition: all 0.3s ease-in-out;
-      }
-      .media-icon > a:hover {
-        color: #ff6600;
-      }
-
-      .legal-links {
-        display: flex;
-        justify-content: space-around;
-        padding: 0.5rem;
-      }
-      .legal-links > a:hover {
-        color: #ff6600;
-      }
-      .legal-links > a {
-        text-decoration: none;
-        color: black;
-      }
-      .footer-bottom > p {
-        border-top: 1px solid grey;
-        padding-top: 1rem;
-        text-align: center;
-      }
-      /* CATEGORIES STYLE */
-      .categories {
-        height: auto;
-        text-align: center;
-        max-width: 600px;
-        margin: 0 auto;
-        border-radius: 8px;
-        overflow: hidden;
-        margin: 1rem;
-      }
-
-      .categories-header {
-        padding: 20px;
-        background: #ffffff;
-        border-bottom: 1px solid #8f8f8f;
-        margin: 1rem;
-      }
-
-      .categories-header h2 {
-        color: #000000;
-        margin-bottom: 8px;
-      }
-
-      .categories-header p {
-        color: #666;
-      }
-
-      .categories-body {
-        padding: 10px;
-      }
-
-      .categories-list {
-        list-style: none;
-        border: 1px solid #ff6600;
-        border-radius: 5px;
-        overflow: hidden;
-      }
-
-      .header-categories {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 12px 15px;
-        background: #ffffff;
-        border-bottom: 1px solid #ff6600;
-        cursor: pointer;
-        font-weight: bold;
-        transition: all 0.3s ease;
-      }
-
-      .header-categories:hover {
-        background: rgba(255, 102, 0, 0.1);
-      }
-
-      .header-categories i {
-        transition: transform 0.3s ease;
-        color: rgb(255, 102, 0);
-      }
-
-      .categories-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
-        background: rgb(255, 255, 255);
-        text-align: left;
-        list-style: none;
-      }
-
-      .categories-content li {
-        padding: 12px 20px;
-        border-bottom: 1px solid rgba(255, 102, 0, 0.3);
-        transition: all 0.3s ease;
-      }
-
-      .categories-content li:hover {
-        background: rgba(255, 102, 0, 0.1);
-        padding-left: 25px;
-      }
-
-      .categories-content li:last-child {
-        border-bottom: none;
-      }
-
-      /* Active state */
-      .categories-list.active .categories-content {
-        max-height: 500px;
-        transition: max-height 0.3s ease-in;
-      }
-
-      .categories-list.active .header-categories {
-        background: rgba(255, 102, 0, 0.1);
-      }
-
-      .categories-list.active .header-categories i {
-        transform: rotate(180deg);
-      }
-    </style>
   </head>
   <body>
     <!-- nav bar -->
@@ -347,90 +44,114 @@
         </li>
       </ul>
     </nav>
+    <div class="wrapper">
+      <div class="categories">
+        <div class="categories-header">
+          <h2>SHOP BY CATEGORIES</h2>
+          <p>Browse our wide range of tech products.</p>
+        </div>
+        <div class="buttons">
+          <button class="filter-btn active" data-category="all">All</button>
+          <button class="filter-btn" data-category="sd">SD Card</button>
+          <button class="filter-btn" data-category="micro">
+            Micro SD Card
+          </button>
+          <button class="filter-btn" data-category="usb">USB Drive</button>
+          <button class="filter-btn" data-category="accessories">
+            Accessories
+          </button>
+        </div>
+        <div class="product-container">
+          <div class="product-grid">
+            <!-- SD Cards -->
+            <div class="product-card" data-category="sd">
+              <img src="1.webp" alt="Lexar Professional Go Portable SSD" />
+              <h3>Lexar® Professional Go Portable SSD</h3>
+              <p>High-speed portable SSD for professionals</p>
+              <a class="btn-viewdetail">View Details</a>
+            </div>
+            <div class="product-card" data-category="sd">
+              <img src="2.webp" alt="Lexar 64GB SD Card" />
+              <h3>Lexar 64GB SD Card Professional</h3>
+              <p>Professional grade SD card for photography</p>
+              <a class="btn-viewdetail">View Details</a>
+            </div>
+            <!-- Micro SD Cards -->
+            <div class="product-card" data-category="micro">
+              <img src="3.webp" alt="Kingston Micro SD Card" />
+              <h3>Kingston 128GB Micro SDXC</h3>
+              <p>High capacity micro SD card for mobile devices</p>
+              <a class="btn-viewdetail">View Details</a>
+            </div>
+            <div class="product-card" data-category="micro">
+              <img src="3.webp" alt="Samsung EVO Plus Micro SD Card" />
+              <h3>Samsung EVO Plus 256GB Micro SD Card</h3>
+              <p>Premium micro SD card with ultra-fast speeds</p>
+              <a class="btn-viewdetail">View Details</a>
+            </div>
+            <!-- USB Drives -->
+            <div class="product-card" data-category="usb">
+              <img src="4.webp" alt="PNY USB Drive" />
+              <h3>PNY 64GB USB 3.0 Flash Drive</h3>
+              <p>Compact USB drive with fast transfer speeds</p>
+              <a class="btn-viewdetail">View Details</a>
+            </div>
+            <div class="product-card" data-category="usb">
+              <img src="5.webp" alt="SanDisk USB Drive" />
+              <h3>SanDisk Ultra Fit USB 3.1 128GB</h3>
+              <p>Ultra-small USB drive with large capacity</p>
+              <a class="btn-viewdetail">View Details</a>
+            </div>
+            <!-- Accessories -->
+            <div class="product-card" data-category="accessories">
+              <img src="6.webp" alt="Charger" />
+              <h3>Charger High Speed</h3>
+              <p>Fast charging accessory for all devices</p>
+              <a class="btn-viewdetail">View Details</a>
+            </div>
+          </div>
+        </div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const buttons = document.querySelectorAll(".filter-btn");
+            const products = document.querySelectorAll(".product-card");
 
-    <div class="categories">
-      <div class="categories-header">
-        <h2>SHOP BY CATEGORIES</h2>
-        <p>Browse our wide range of tech products.</p>
-      </div>
-      <div class="categories-body">
-        <ul class="categories-list">
-          <li class="header-categories">
-            <span>Memory Card</span><i class="fa-solid fa-caret-down"></i>
-          </li>
-          <ul class="categories-content">
-            <li>SD Card</li>
-            <li>Micro SD Card</li>
-            <li>CF Express</li>
-          </ul>
-        </ul>
-      </div>
-      <div class="categories-body">
-        <ul class="categories-list">
-          <li class="header-categories">
-            <span>Meomory Card Reader & Case</span
-            ><i class="fa-solid fa-caret-down"></i>
-          </li>
-          <ul class="categories-content">
-            <li>CreateMate High-speed Card Reader Case</li>
-            <li>Lexar® Professional USB-C™ Dual-Slot Reader</li>
-            <li>CFexpress Type B / XQD Memory Card Reader</li>
-          </ul>
-        </ul>
-      </div>
-      <div class="categories-body">
-        <ul class="categories-list">
-          <li class="header-categories">
-            <span>Mouse</span><i class="fa-solid fa-caret-down"></i>
-          </li>
-          <ul class="categories-content">
-            <li>Basics Mouse</li>
-            <li>Gaming Mouse</li>
-            <li>Professional Mouse</li>
-            <li>Wireless Mouse</li>
-          </ul>
-        </ul>
-      </div>
-      <div class="categories-body">
-        <ul class="categories-list">
-          <li class="header-categories">
-            <span>Keyboard</span><i class="fa-solid fa-caret-down"></i>
-          </li>
-          <ul class="categories-content">
-            <li>Wireless Keyboard</li>
-            <li>Standard Keyboard</li>
-            <li>Gaming Keyboard</li>
-            <li>Mechanical Keyboard</li>
-            <li>Membrane Keyboard</li>
-          </ul>
-        </ul>
-      </div>
-      <div class="categories-body">
-        <ul class="categories-list">
-          <li class="header-categories">
-            <span>Digital Storage</span><i class="fa-solid fa-caret-down"></i>
-          </li>
-          <ul class="categories-content">
-            <li>Internal Storage</li>
-            <li>External Storage</li>
-            <li>Portable Storage</li>
-          </ul>
-        </ul>
-      </div>
-      <div class="categories-body">
-        <ul class="categories-list">
-          <li class="header-categories">
-            <span>Accessories</span><i class="fa-solid fa-caret-down"></i>
-          </li>
-          <ul class="categories-content">
-            <li>Charger</li>
-            <li>Mouse Pads</li>
-            <li>Desk Mat</li>
-          </ul>
-        </ul>
+            buttons.forEach((button) => {
+              button.addEventListener("click", () => {
+                // Update active button
+                buttons.forEach((btn) => btn.classList.remove("active"));
+                button.classList.add("active");
+
+                const category = button.dataset.category;
+
+                products.forEach((product) => {
+                  const match =
+                    category === "all" || product.dataset.category === category;
+
+                  if (!match) {
+                    product.classList.remove("active");
+                    product.classList.add("hiding");
+
+                    // Wait for fade-out to finish before hiding from layout
+                    setTimeout(() => {
+                      product.style.display = "none";
+                      product.classList.remove("hiding");
+                    }, 400);
+                  } else {
+                    // Make visible first (to ensure transitions work)
+                    product.style.display = "block";
+                    // Trigger reflow
+                    void product.offsetWidth;
+                    product.classList.add("active", "showing");
+                  }
+                });
+              });
+            });
+          });
+        </script>
       </div>
     </div>
-
+    <!-- Footer Section -->
     <div class="footer">
       <div class="footer-left">
         <h3>ARES STORE</h3>
